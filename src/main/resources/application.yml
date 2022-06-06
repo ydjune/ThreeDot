@@ -1,0 +1,35 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        user_sql_cooments: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+
+  logging:
+    level:
+      com.ydj.threedot:DEBUG
+
+jwt:
+  header: Authorization
+  secret: ZG9taW5pYy10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQta2V5LXlvdS1jYW4tZG8taXQtawo=
+  token-validity-in-seconds: 86400
+
+
